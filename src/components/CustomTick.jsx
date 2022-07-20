@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 
 
 function CustomTick({ x, y, payload }) {
-    console.log(payload)
 
     switch (payload.value) {
         case 'sunny':

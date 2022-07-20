@@ -3,7 +3,10 @@ import WeatherWidget from './components/weatherWidget';
 function App() {
  return (
   <div className='App'>
-   <WeatherWidget />
+   <div style={{ display: 'flex' }}>
+    <WeatherWidget identifer={'first'} />
+    <WeatherWidget identifer={'second'} />
+   </div>
   </div>
  );
 }

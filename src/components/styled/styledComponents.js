@@ -12,9 +12,12 @@ export const FlexContainer = styled.div(
 );
 
 export const GradientContainer = styled.div({
- // Temp Margin -- Remove When Imported
- margin: '10%',
- position: 'absolute',
+ display: 'flex',
+ flexDirection: 'column',
+ alignItems: 'center',
+ margin: '5%',
+ position: 'relative',
+ zIndex: 10,
  background:
   'linear-gradient(0.25turn, rgba(22,68,135,.90), rgba(24,31,40,.60))',
  padding: '2.5% 1.0%',
@@ -41,6 +44,9 @@ export const TranparentContainer = styled.div({
 
 export const FocusFeature = ({
  className,
+ identifier,
+ OnClick,
+ target,
  icon,
  day,
  date,
@@ -49,9 +55,13 @@ export const FocusFeature = ({
  feelslike,
  desc,
 }) => (
- <div className={className}>
-  <FontAwesomeIcon icon={icon} size='6x' />
-  <div>
+ <div
+  className={`${className} ${identifier} overview`}
+  onClick={OnClick}
+  ref={target}
+ >
+  <FontAwesomeIcon icon={icon} size='5x' />
+  <div className='details'>
    <h2 className='title'>{day}</h2>
    <h3 className='subTitle'>{date}</h3>
    <h1 className='high'>{high}°</h1>
@@ -63,14 +73,17 @@ export const FocusFeature = ({
 );
 
 export const DailyOverview = styled(FocusFeature)(
- ({ BackgroundColor, Textrgb }) => ({
+ ({ BackgroundColor, Textrgb, Direction }) => ({
   backgroundColor: BackgroundColor,
+  position: 'absolute',
+  zIndex: 2,
   display: 'flex',
+  flexDirection: Direction,
   alignItems: 'center',
   justifyContent: 'space-around',
-  margin: '5% 0',
   padding: '5%',
   borderRadius: '15px',
+  width: '80%',
   color: `rgba(${Textrgb ? Textrgb : '255,255,255'}, 1.0)`,
   h1: {
    fontWeight: 600,
@@ -131,9 +144,6 @@ export const ConditionsBox = styled(Box)(
   'p.value': {
    marginTop: '15%',
    fontSize: '1.25em',
-  },
-  svg: {
-   opacity: '50%',
   },
  })
 );
