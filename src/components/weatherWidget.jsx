@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import anime from "animejs/lib/anime.es.js";
 import DailyTemp from './dailyTemp';
 import CustomTick from './CustomTick';
@@ -123,7 +123,7 @@ function WeatherWidget({ identifer }) {
                 BackgroundColor={'rgba(2,33,64,1.0)'}
 
             />
-            <div className={`${identifer} WeatherAdditonalData`} style={{ marginTop: '50%', width: '100%' }}>
+            <div className={`${identifer} WeatherAdditonalData`} style={{ marginTop: '60%', width: '100%' }}>
                 <FlexContainer JustifyContent={'center'}>
                     <ConditionsBox
                         img={faDroplet}

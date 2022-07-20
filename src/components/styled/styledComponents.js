@@ -15,12 +15,11 @@ export const GradientContainer = styled.div({
  display: 'flex',
  flexDirection: 'column',
  alignItems: 'center',
- margin: '5%',
  position: 'relative',
  zIndex: 10,
  background:
   'linear-gradient(0.25turn, rgba(22,68,135,.90), rgba(24,31,40,.60))',
- padding: '2.5% 1.0%',
+ padding: '1.5% 1.5%',
  minWidth: '415px',
  maxWidth: '30%',
  minHeight: '80%',
@@ -46,7 +45,6 @@ export const FocusFeature = ({
  className,
  identifier,
  OnClick,
- target,
  icon,
  day,
  date,
@@ -55,11 +53,7 @@ export const FocusFeature = ({
  feelslike,
  desc,
 }) => (
- <div
-  className={`${className} ${identifier} overview`}
-  onClick={OnClick}
-  ref={target}
- >
+ <div className={`${className} ${identifier} overview`} onClick={OnClick}>
   <FontAwesomeIcon icon={icon} size='5x' />
   <div className='details'>
    <h2 className='title'>{day}</h2>
@@ -85,6 +79,9 @@ export const DailyOverview = styled(FocusFeature)(
   borderRadius: '15px',
   width: '80%',
   color: `rgba(${Textrgb ? Textrgb : '255,255,255'}, 1.0)`,
+  '.details': {
+   textAlign: 'center',
+  },
   h1: {
    fontWeight: 600,
   },
