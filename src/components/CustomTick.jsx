@@ -1,6 +1,5 @@
 import React from "react";
-import cloud from '../assets/graphs/cloudy.svg'
-import styled from '@emotion/styled'
+
 
 
 function CustomTick({ x, y, payload }) {
